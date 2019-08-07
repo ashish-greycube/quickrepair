@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include quickrepair *.css
+recursive-include quickrepair *.csv
+recursive-include quickrepair *.html
+recursive-include quickrepair *.ico
+recursive-include quickrepair *.js
+recursive-include quickrepair *.json
+recursive-include quickrepair *.md
+recursive-include quickrepair *.png
+recursive-include quickrepair *.py
+recursive-include quickrepair *.svg
+recursive-include quickrepair *.txt
+recursive-exclude quickrepair *.pyc
