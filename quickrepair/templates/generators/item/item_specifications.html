@@ -1,0 +1,54 @@
+
+
+
+<!-- quickrepair: add description-->
+{% if doc.web_long_description -%}
+		 <div class="row item-website-description" style="margin-top:30px; margin-bottom:20px">
+			<div class="col-md-12">
+		<div itemprop="description" class="item-desc">
+		{{ doc.web_long_description }}
+		</div>
+		</div>
+		</div>
+{%- endif %}
+<!-- quickrepair: add description-->
+
+		<!-- quickrepair: add section2 start html-->
+		<section class="custom  phone-section">
+		  <div class="row">
+			<div class=" col-sm-12 col-md-12 ">
+				<hr style="border-top-style: dashed;     margin-top: 5px;">
+			<!-- TrustBox widget - Carousel --> <div class="trustpilot-widget" data-locale="nl-NL" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="5b702d1b07419d0001a97e3b" data-style-height="130px" data-style-width="100%" data-theme="light" data-stars="5"> <a href="https://nl.trustpilot.com/review/quick-repair.be" target="_blank">Trustpilot</a> </div> <!-- End TrustBox widget -->
+			  <hr style="border-top-style: dashed;     margin-bottom: 5px;">
+			  <h2 class="block-title" style="border:none;  padding:0;">
+			  
+			  <span><img src="/files/icon-chat.png" /></span> <br /> U weet niet wat er mankeert aan uw toestel ? <br /> Kom vrijblijvend langs of neem contact met ons op.</h2>
+              
+			  <!--<ol class="number-sec">
+				<li>You print the registration form and complete it.</li>
+				<li>You send the device together with the form with Bpost or another courier service. </li>
+				<li>When the device arrives in our store, we carry out the repair immediately. </li>
+				<li>After the repair we will send you the recovery voucher or invoice via e-mail. You can make the payment via Pay-Pal or bank transfer. As soon as we have received the payment, the device will be sent.</li>
+			  </ol>-->
+			</div>
+		  </div>
+		</section>
+		<!-- quickrepair: add section2 end html-->
+
+
+
+
+{% if doc.website_specifications -%}
+<div class="row item-website-specification mt-5">
+	<div class="col-md-12">
+		<table class="table table-bordered">
+		{% for d in doc.website_specifications -%}
+			<tr>
+				<td class="text-muted" style="width: 30%;">{{ d.label }}</td>
+				<td>{{ d.description }}</td>
+			</tr>
+		{%- endfor %}
+		</table>
+	</div>
+</div>
+{%- endif %}
