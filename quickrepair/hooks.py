@@ -20,7 +20,10 @@ app_license = "MIT"
 
 # include js, css files in header of web template
 web_include_css = "/assets/quickrepair/css/quickrepair_website_theme.css"
-web_include_js = "/assets/quickrepair/js/quickrepair_website_theme.js"
+web_include_js = [
+    "/assets/quickrepair/js/quickrepair_trustpilot.js",
+    "/assets/quickrepair/js/quickrepair_website_theme.js"
+]
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
