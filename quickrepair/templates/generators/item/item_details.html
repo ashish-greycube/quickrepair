@@ -31,7 +31,7 @@
 												<tr>
 					<td style="vertical-align:middle;">{{ d.repair_item }}</td>						 
 													<td><h4>€{{'%0.2f'| format(d.repair_price|float)}}</h4></td>
-													<td style="vertical-align:middle;"><a class="signup" onClick="nextPrev('{{ d.repair_item }}')">Maak Afspraak</a></td>
+													<td style="vertical-align:middle; width:130px;"><a class="signup" onClick="nextPrev('{{ d.repair_item }}')">Maak Afspraak</a></td>
 												</tr>
 											{%- endfor %}
 												</tbody>
@@ -68,7 +68,7 @@
 					</style>
 								   <div class="tab2" style="display:none;">
 										   <div id="form-alert" class="" style=" margin-bottom: 14px; "></div>
-										<a class="btn btn-default float-left" onClick="prevback()"> << Terug</a>
+										<a class="btn btn-default float-right" onClick="prevback()"> << Terug</a>
 										<div class="form-group">
 										  <label for="name">Naam </label>
 										  <input type="text" class="form-control" id="name" placeholder="Naam">
