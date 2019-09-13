@@ -103,12 +103,14 @@ function prevback(){
         msgprint('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid email id</div>');
         return;
     }
+	var modelText = args.model;
+	modelText = modelText.replace(/(\r\n|\n|\r)/gm," ");
 
     // compose the message
     var message = "Name: " + args.name + "\n"
         + "Email: " + args.email + "\n"
         + "Telefoon: " + args.phone + "\n"
-		+ "Model: " + args.model + "\n"
+		+ "Model: " + modelText + "\n"
         + "Herstelling: " + args.repair + "\n"
         + "Winkel: " + args.store + "\n"
 		+ "Opmerking: " + args.message + "\n"
