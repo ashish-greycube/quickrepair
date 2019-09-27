@@ -3,6 +3,9 @@
 {% block header %}<h1>{{ name }}</h1>{% endblock %}
 
 {% block page_content %}
+<!-- insert search box -->
+{% include "templates/generators/item/item_search.html" %}
+<!-- insert search box -->
 <div class="item-group-content" itemscope itemtype="http://schema.org/Product">
 	<div>
 		{% if slideshow %}
@@ -176,4 +179,9 @@
 	}
 </style>
 <!-- quickrepair: add style css end -->
+<!-- insert search box -->
+<script>
+ {% include "templates/includes/item_search.js" %}
+</script>
+<!-- insert search box -->
 {% endblock %}

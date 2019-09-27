@@ -7,6 +7,9 @@
 {% endblock %}
 
 {% block page_content %}
+<!-- insert search box -->
+{% include "templates/generators/item/item_search.html" %}
+<!-- insert search box -->
 {% from "erpnext/templates/includes/macros.html" import product_image %}
 <div class="item-content">
 	<div class="product-page-content" itemscope itemtype="http://schema.org/Product">
@@ -149,6 +152,9 @@ var msgprint = function(txt) {
 <!-- quickrepair js  -->
 
 <!-- js should be loaded in body! -->
-
-
+<!-- insert search box -->
+<script>
+ {% include "templates/includes/item_search.js" %}
+</script>
+<!-- insert search box -->
 {% endblock %}
