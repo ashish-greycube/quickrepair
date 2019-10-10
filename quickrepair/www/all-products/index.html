@@ -9,7 +9,7 @@
 <div class="row">
 	<div class="col-8">
 		<div class="input-group input-group-sm mb-3">
-			<input type="search" class="form-control" placeholder="{{_('Search')}}"
+			<input type="search" class="form-control searchtxt" placeholder="{{_('Search')}}"
 				aria-label="{{_('Product Search')}}" aria-describedby="product-search"
 				value="{{ frappe.form_dict.search or '' }}"
 			>
@@ -42,10 +42,10 @@
 	</div>
 	<div class="col-12 order-1 col-md-4 order-md-2">
 		<!-- insert search box -->
-		<a class="mb-3 d-inline-block" href="javascript:history.back();">{{ _('Go Back') }}</a>
+		<a class="mb-3 d-inline-block go-back" href="javascript:history.back();">{{ _('Go Back') }}</a>
 		<!-- insert search box -->
 		{% if frappe.form_dict.start or frappe.form_dict.field_filters or frappe.form_dict.attribute_filters or frappe.form_dict.search %}
-		<a class="mb-3 d-inline-block" href="/all-products">{{ _('Clear filters') }}</a>
+		<a class="mb-3 d-inline-block btn-default" href="/all-products">{{ _('Clear filters') }}</a>
 		{% endif  %}
 
 		<div class="collapse d-md-block" id="product-filters">
