@@ -1,4 +1,5 @@
 {% extends "templates/web.html" %}
+{% block title %} {{ website_title_qr or name }} {% endblock %}
 {% from "templates/includes/macros.html" import product_image_qr %}
 {% block header %}<h1>{{ name }}</h1>{% endblock %}
 

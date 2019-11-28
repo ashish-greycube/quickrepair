@@ -1,6 +1,6 @@
 {% extends "templates/web.html" %}
 
-{% block title %} {{ title }} {% endblock %}
+{% block title %} {{ website_title_qr or title }} {% endblock %}
 
 {% block breadcrumbs %}
 	{% include "templates/includes/breadcrumbs.html" %}
