@@ -36,14 +36,16 @@
 <script type="text/javascript" src="/assets/js/bootstrap-4-web.min.js"></script>
 <!-- quickrepair js  -->
 <script>
-function nextPrev(text){
+function nextPrev(text,price){
 	$("#repair").val(text);
+	$("#pricetxt").html('<strong> Prijs: ' + price + ' </strong>');
   $(".tab1").hide();
   $(".tab2").show();
 }
 function prevback(){
   $(".tab1").show();
    $("#repair").val('');
+   $("#pricetxt").html('');
   $(".tab2").hide();
 }
 
@@ -52,7 +54,9 @@ function prevback(){
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		
+		var todaydate = new Date();
+		$('[id="date"]').val(todaydate);
+
 		$.getScript('/assets/frappe/js/lib/datepicker/datepicker.min.js', function() {
 		 /*var options={
 			 isRTL: false,
@@ -87,9 +91,10 @@ function prevback(){
 		model: $('[itemprop="name"]').text(),
         repair: $('[id="repair"]').val(),
         store: $('[id="store"]').find(":selected").text().trim(),
-		timeslot: $('[id="timeslot"]').val(),
 		message: $('[id="message"]').val(),
-        date: $('[id="date"]').val()
+		timeslot: $('[id="timeslot"]').val(),
+		date: $('[id="date"]').val(),
+		price: $('[id="pricetxt"]').text()
       }
 	  
 	  $.each(args, function( key, value ) {
@@ -118,6 +123,7 @@ function prevback(){
 		+ "Model: " + modelText + "\n"
         + "Herstelling: " + args.repair + "\n"
         + "Winkel: " + args.store + "\n"
+		+  args.price + "\n"
 		+ "Opmerking: " + args.message + "\n"
         + "Datum: " + args.date  + "\n"
 		+ "Tijdslot: " + args.timeslot

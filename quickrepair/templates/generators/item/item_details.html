@@ -23,7 +23,7 @@
 													<tr>
 													  <th>{{ _("Herstelling") }}</th>
 													  <th>Prijs</th>
-													  <th></th>
+													  <th width="150px"></th>
 													</tr>
 												  </thead>
 												  <tbody> 
@@ -31,7 +31,7 @@
 												<tr>
 					<td style="vertical-align:middle;">{{ d.repair_item }}</td>						 
 													<td><h4>€{{'%0.2f'| format(d.repair_price|float)}}</h4></td>
-													<td style="vertical-align:middle; width:130px;"><a class="signup" onClick="nextPrev('{{ d.repair_item }}')">Maak Afspraak</a></td>
+													<td style="vertical-align:middle; width:130px;"><a class="signup" onClick="nextPrev('{{ d.repair_item }}', `€{{'%0.2f'| format(d.repair_price|float)}}`)"> <span class="spbutton"> Aanmelden </span> </a></td>
 												</tr>
 											{%- endfor %}
 												</tbody>
@@ -65,6 +65,10 @@
 						font-size:28px;
 						vertical-align: middle;
 					}
+					.spbutton{ display:inline-block;}
+					@media (max-width: 390px) {
+					   .spbutton{     display: initial;     box-sizing: unset;}
+					}
 					</style>
 								   <div class="tab2" style="display:none;">
 										   <div id="form-alert" class="" style=" margin-bottom: 14px; "></div>
@@ -85,19 +89,23 @@
 										  <label for="repair">Welke herstelling?</label>
 										  <input type="text" class="form-control" id="repair" readonly="readonly" placeholder="Welke herstelling?">
 										</div>
+										<p id="pricetxt"></p>
 										<div class="form-group">
-										  <label for="store">Welke winkel wilt u langskomen?</label>
+										  <label for="store">Verzend uw toestel naar:</label>
 										  <select id="store" class="form-control">
 											<option value="Vlaanderenstraat 117, 9000 Gent">Vlaanderenstraat 117, 9000 Gent</option>
-											<option value="Geldhofstraat 1, 9300 Aalst">Geldhofstraat 1, 9300 Aalst</option>
 										  </select>
 										</div>
 										
 										<div class="form-group">
-										  <label for="message">Uw vraag of opmerking</label>
-										  <textarea class="form-control" id="message" rows="4" placeholder="Uw vraag of opmerking"></textarea>
+										  <label for="message">Vul hieronder uw adres + klachtomschrijving</label>
+										  <textarea class="form-control" id="message" rows="4" placeholder="Vul hieronder uw adres + klachtomschrijving"></textarea>
 										</div>
-										<div class="form-group">
+										
+										<input type="hidden" class="form-control" id="date" value="Today" >
+										<input type="hidden" class="form-control" id="timeslot" value="00:00" >
+
+										<!--<div class="form-group">
 										  <label for="date">Datum</label>
 										  <input type="text" class="form-control" id="date" placeholder="dd.mm.yyyy" autocomplete="off">
 										</div>
@@ -114,9 +122,15 @@
 											<option value="17:00 - 18:00">17:00 - 18:00</option>
 											<option value="18:00 - 19:00">18:00 - 19:00</option>
 										  </select>
-										</div>
+										</div>-->
 										<button type="submit" class="btn btn-primary btn-orange">Verzenden</button>
 										<a class="btn btn-default" onClick="prevback()">Terug</a> 
+											<p style="margin-bottom: 0.3rem; margin-top: 1rem; "><strong> gratis verzenden en retour </strong> </p>
+											<ul>
+												 <li> verzekerd </li>
+												 <li> levenslange service garantie </li>
+												 <li> mogelijks dezelfde dag terug </li>
+											</ul>
 									</div>
 								  
 									<!-- quickrepair: add form + List service end html--> 
@@ -135,27 +149,23 @@
 
 			<!-- quickrepair: add side-section start html-->
             <div class=" col-sm-12 col-md-3">
+					  
 					<div class="bg-grey">
-					  <div class=" block-block-3">
-						<!--<p><strong>Why register a device?</strong></p>-->
-						<ul>
-						  <li>Klaar terwijl u wacht</li>
-						  <li>Uw toestel als nieuw terug</li>
-						</ul>
-						<p><strong>Bij Quick Repair altijd:</strong></p>
-						<ul class="secondstyle">
-						  <li>12 maanden garantie OEM scherm</li>
-						  <li>3 maanden garantie compatibel scherm</li>
-						  <li>Scherp geprijsd</li>
-						  <li>Snel & vakkundig</li>
-						</ul>
-						<a href="/contact#contactform" class="signup">
-								  {{ _("STEL UW VRAAG") }}</a>
+					  <div class=" block-block-3" >
+							<ul class="secondstyle">
+							  <li><strong>stap 1:</strong> Vul het formulier volledig in</li>
+							  <li><strong>stap 2:</strong> U ontvangt een verzend label in uw mailbox ( kijk ook in jouw spam ! )</li>
+							  <li><strong>stap 3:</strong> Breng jouw verzending naar jouw dichtstbijzijnde postkantoor.</li>
+							  <li><strong>stap 4:</strong> Eens wij de verzending ontvangen hebben, analyseren wij het probleem en nemen verder contact met je op .</li>
+							</ul>
+							<p>UW TOESTEL IS VERZEKERD TOT 500 EURO!</p>
+							<a href="tel:092243051" class="signup">
+								 092243051</a>
 					  </div>
-					</div>
-					<div class="shopping_cart">
+					</div>  
+					<!--<div class="shopping_cart">
 						<a href="https://shop.quick-repair.be/" target="_blank"> <i class="fa fa-shopping-cart"></i> {{ _("Bezoek onze webshop") }} </a>
-					</div>
+					</div>-->
 			   </div>
 			  <!-- quickrepair: add side-section end html-->
 	
