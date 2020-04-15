@@ -10,13 +10,13 @@
 </p>
 
 
-                <!-- quickrepair: add form + List service start html-->  
+                <!-- quickrepair: add form + List service start html-->
 
 				<div class="tab1">
 									{% if repair_item_specification -%}
 										<div itemprop_repair="repairs" itemscope itemtype="http://schema.org/Repair">
-											
-										
+
+
 									<div class=" repair-item-specification" style="margin-top: 0px">
 											<table class="table table-hover table-responsive table-striped" >
 												<thead>
@@ -26,10 +26,10 @@
 													  <th width="150px"></th>
 													</tr>
 												  </thead>
-												  <tbody> 
+												  <tbody>
 											{% for d in repair_item_specification -%}
 												<tr>
-					<td style="vertical-align:middle;">{{ d.repair_item }}</td>						 
+					<td style="vertical-align:middle;">{{ d.repair_item }}</td>
 													<td><h4>€{{'%0.2f'| format(d.repair_price|float)}}</h4></td>
 													<td style="vertical-align:middle; width:130px;"><a class="signup" onClick="nextPrev('{{ d.repair_item }}', `€{{'%0.2f'| format(d.repair_price|float)}}`)"> <span class="spbutton"> Aanmelden </span> </a></td>
 												</tr>
@@ -39,7 +39,7 @@
 									</div>
 									</div>
 									{%- endif %}
-								   </div>  
+								   </div>
 					<style >
 					a.signup {
 						color: #fff !important;
@@ -91,17 +91,18 @@
 										</div>
 										<p id="pricetxt"></p>
 										<div class="form-group">
-										  <label for="store">Verzend uw toestel naar:</label>
+										  <label for="store">Gratis verzenden of ophaal en terug breng service?</label>
 										  <select id="store" class="form-control">
-											<option value="Vlaanderenstraat 117, 9000 Gent">Vlaanderenstraat 117, 9000 Gent</option>
+											<option value="Gratis Verzenden">Gratis Verzenden</option>
+											<option value="Ophaal & Terugbreng Service">Ophaal & Terugbreng Service</option>
 										  </select>
 										</div>
-										
+
 										<div class="form-group">
 										  <label for="message">Vul hieronder uw adres + klachtomschrijving</label>
 										  <textarea class="form-control" id="message" rows="4" placeholder="Vul hieronder uw adres + klachtomschrijving"></textarea>
 										</div>
-										
+
 										<input type="hidden" class="form-control" id="date" value="Today" >
 										<input type="hidden" class="form-control" id="timeslot" value="00:00" >
 
@@ -123,17 +124,18 @@
 											<option value="18:00 - 19:00">18:00 - 19:00</option>
 										  </select>
 										</div>-->
-										<button type="submit" class="btn btn-primary btn-orange">Verzenden</button>
-										<a class="btn btn-default" onClick="prevback()">Terug</a> 
+										<button type="submit" class="btn btn-primary btn-orange">Reparatie Aanmelden</button>
+										<a class="btn btn-default" onClick="prevback()">Terug</a>
 											<p style="margin-bottom: 0.3rem; margin-top: 1rem; "><strong> gratis verzenden en retour </strong> </p>
 											<ul>
 												 <li> verzekerd </li>
 												 <li> levenslange service garantie </li>
 												 <li> mogelijks dezelfde dag terug </li>
+												 <li> Ophaal & Terugbreng service </li>
 											</ul>
 									</div>
-								  
-									<!-- quickrepair: add form + List service end html--> 
+
+									<!-- quickrepair: add form + List service end html-->
 
 
 
@@ -149,7 +151,7 @@
 
 			<!-- quickrepair: add side-section start html-->
             <div class=" col-sm-12 col-md-3">
-					  
+
 					<div class="bg-grey">
 					  <div class=" block-block-3" >
 							<ul class="secondstyle">
@@ -162,10 +164,9 @@
 							<a href="tel:092243051" class="signup">
 								 092243051</a>
 					  </div>
-					</div>  
+					</div>
 					<!--<div class="shopping_cart">
 						<a href="https://shop.quick-repair.be/" target="_blank"> <i class="fa fa-shopping-cart"></i> {{ _("Bezoek onze webshop") }} </a>
 					</div>-->
 			   </div>
 			  <!-- quickrepair: add side-section end html-->
-	
